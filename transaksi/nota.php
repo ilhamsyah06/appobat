@@ -49,18 +49,25 @@ AND transaksi.id_transaksi='$_GET[id]'");
             <tr align="center"><td><hr></td></tr>
         </table>
         <table width="250" border="0" cellpadding="1" cellspacing="0">
+        <tr>
+                  <th align="left" style="font-size:10px;">Nama</th>
+                  <th align="left" style="font-size:10px;">Qty</th>
+                  <th  style="font-size:10px;">Harga</th>
+                  <th  style="font-size:10px;">Total</th>
+              </tr>  
         <?php 
               $query = mysqli_query($koneksi, "SELECT detail_transaksi.*, obat.*, stok.*
               FROM detail_transaksi, obat, stok
               WHERE detail_transaksi.id_obat = obat.id_obat
               AND detail_transaksi.id_stok = stok.id_stok AND id_transaksi='$_GET[id]'");
               while ($data1 = mysqli_fetch_array($query)){
-              ?>    
+              ?>
+                
         <tr>
-            <th align="left" class="td"><?php echo substr($data1['nama_obat'],0,10) ?>..</th>
-            <th class="td"><?php echo $data1['qty'] ?></th>
-            <th class="td">Rp. <?php echo number_format($data1['harga']) ?></th>
-            <th class="td" align="right">Rp. <?php echo number_format($data1['total'])?></th>
+            <td align="left" class="td"><?php echo substr($data1['nama_obat'],0,10) ?>..</td>
+            <td class="td"><?php echo $data1['qty'] ?></td>
+            <td class="td">Rp. <?php echo number_format($data1['harga']) ?></td>
+            <td class="td" align="right">Rp. <?php echo number_format($data1['total'])?></td>
         </tr>
               <?php 
             $barang = $barang+$data1['qty'];

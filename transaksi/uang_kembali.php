@@ -121,7 +121,7 @@ include 'function_dateindo.php';
               <!-- this row will not appear when printing -->
               <div class="row no-print">
                 <div class="col-12">
-                  <button onclick="window.open('transaksi/nota.php?id=<?php echo $data['id_transaksi']; ?>','mywindow','width=265px, height=400px')" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+                  <button onclick="window.open('transaksi/nota.php?id=<?php echo $data['id_transaksi']; ?>','mywindow','width=240px, height=400px')" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
                   <a type="button" href="index.php?page=transaksi" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Transaksi Baru
                   </a>
                 </div>

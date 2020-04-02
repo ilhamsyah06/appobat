@@ -22,6 +22,7 @@ if(isset($_POST['id_obat'])){
                 'id_obat' => $pecah['id_obat'],
                 'nama_obat' => $pecah['nama_obat'],
                 'harga_jual' => $pecah['harga_jual'],
+                'satuan' => $pecah['satuan'],
                 'qty' => $qty,
                 'idstok' => $pecah['id_stok']
                );
@@ -35,6 +36,7 @@ if(isset($_POST['id_obat'])){
             'id_obat' => $pecah['id_obat'],
             'nama_obat' => $pecah['nama_obat'],
             'harga_jual' => $pecah['harga_jual'],
+            'satuan' => $pecah['satuan'],
             'qty' => $qty,
             'idstok' => $pecah['id_stok']
           );  

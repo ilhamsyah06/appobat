@@ -56,9 +56,9 @@
                   <tr>
                     <td><?php echo $data['id_stok'] ?></td>
                     <td><?php echo $data['nama_obat'] ?></td>
-                    <td><span class="label label-warning"><?php echo $data['stok_sekarang'] ?></span></td>
-                    <td><?php echo $data['satuan'] ?></td>
-                    <td><?php echo $data['harga_jual'] ?></td>
+                    <td><?php echo $data['stok_sekarang'] ?></td>
+                    <td><span class="badge badge-warning"><?php echo $data['satuan'] ?></span></td>
+                    <td>Rp.<?php echo number_format($data['harga_jual']) ?>,-</td>
                     <td><?php echo $data['tgl_masuk'] ?></td>
                     <td><?php echo $data['tgl_kadaluarsa'] ?></td>
                     <td>

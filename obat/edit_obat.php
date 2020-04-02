@@ -49,11 +49,14 @@ $data=$ambil->fetch_array(MYSQLI_ASSOC);
                             <div class="form-group">
                                 <label>Kategori</label>
                                 <select class="form-control select2" id="kategori" name="id_kategori" style="width: 100%;">
-                            <option value="">-- Pilih Kategori --</option>
-                            <?php $ambil = $koneksi->query("SELECT * FROM kategori ORDER BY nama_kategori ASC");?>
-                            <?php while($data = $ambil->fetch_assoc()){?>
-                            <option value="<?php echo $data['id_kategori']; ?>"><?php echo $data['nama_kategori']; ?></option>
-                            <?php } ?>
+                                <?php 
+                                                $paket = mysqli_query($koneksi,"select * from kategori");
+                                                while($p = mysqli_fetch_array($paket)){
+                                                    ?>
+                                                    <option <?php if($data['id_kategori'] == $p['id_kategori']){echo "selected='selected'";} ?>value="<?php echo $p['id_kategori']; ?>"><?php echo $p['nama_kategori']; ?></option>
+                                                     <?php 
+                                                        } 
+                                                    ?>
               
                                 </select>
                             </div>

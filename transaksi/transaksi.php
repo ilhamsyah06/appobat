@@ -66,12 +66,12 @@ if(isset($_SESSION['keranjang'])){
                 <label for="tanggal">Tanggal</label>
                 <?php $tanggal = date('Y-m-d') ?>
                 <input type="date" class="form-control" id="tanggal" placeholder="Tanggal"
-                    value="<?php echo $tanggal ?>">
+                    value="<?php echo $tanggal ?>" readonly>
             </div>
             <div class="form-group row">
                 <label for="kasir">Kasir</label>
                 <input type="text" class="form-control" id="kasir" name="kasir" placeholder="Kasir"
-                    value="<?php echo $_SESSION['nama'] ?>">
+                    value="<?php echo $_SESSION['nama'] ?>" readonly>
             </div>
         </div>
         <!-- /.card-body -->
@@ -157,6 +157,7 @@ if(isset($_SESSION['keranjang'])){
                         <th>Kode</th>
                         <th>Nama Produk</th>
                         <th>Harga Satuan</th>
+                        <th>Satuan</th>
                         <th>Qty</th>
                         <th>Sub Total</th>
                         <th>Aksi</th>
@@ -166,6 +167,7 @@ if(isset($_SESSION['keranjang'])){
                         <td><span class="badge badge-primary" style="font-size:13px"><?=$value['id_obat']?></span></td>
                         <td><?= substr($value['nama_obat'],0,13)?>..</td>
                         <td>Rp. <?=number_format($value['harga_jual']) ?></td>
+                        <td><span class="badge badge-warning"><?=$value['satuan'] ?></span></td>
                         <td width="100px"><input type="number" class="form-control" name="qty[]"
                                 value="<?=$value['qty']?>"></td>
                         <td>Rp. <?=number_format($value['qty']*$value['harga_jual'])?></td>
